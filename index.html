@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scroll</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        #main{
+            position: absolute;
+            left:0;
+            right: 0;
+            top:0;
+            bottom:0;
+            overflow: hidden;
+            background: #282828;
+        }
+        #swiper{
+            min-height: 100%;
+            background: #fff;
+
+        }
+        li{
+            height: 2.29rem;
+            line-height: 2.29rem;
+            text-align: center;
+            border-bottom: 1px solid #dedfe0;
+            background: #fff;
+            position: relative;
+            font-size: 0.6rem;
+        }
+    </style>
+</head>
+<script>
+    (function () {
+        var html = document.documentElement;
+        var htmlw = html.clientWidth;
+        html.style.fontSize = htmlw/10.8 + "px";
+    })();
+</script>
+<body>
+    <div id="main">
+        <div id="swiper">
+            <ul id="list">
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="js/Scroll.js"></script>
+<script>
+    var main = document.getElementById('main');
+    var list = document.getElementById('list');
+    for(var i = 0 ;i < 22;i++){
+        var li = document.createElement('li');
+        li.innerHTML = "<li>我爱生活</li>";
+        list.appendChild(li);
+    }
+    var scrollY = new Scroll({
+        el:main,
+        dir:'y'
+    })
+</script>
+</html>
